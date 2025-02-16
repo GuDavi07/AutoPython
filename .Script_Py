@@ -1,0 +1,57 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+# Caminho para o WebDriver (exemplo: ChromeDriver)
+webdriver_path = 'path/to/chromedriver'
+
+# Dados a serem preenchidos
+dados = {
+    'nome': '',
+    'data_nascimento': '',
+    'sexo': '',
+    'cpf': '',
+    'profissao': '',
+    'endereco': '',
+    'cep': ''
+}
+
+# URL do formulário
+form_url = 'http://'
+
+# Inicializa o WebDriver
+driver = webdriver.Chrome(executable_path=webdriver_path)
+driver.get(form_url)
+
+try:
+    # Preenche os campos do formulário
+    nome = driver.find_element(By.NAME, 'nome')
+    nome.send_keys(dados['nome'])
+
+    data_nascimento = driver.find_element(By.NAME, 'data_nascimento')
+    data_nascimento.send_keys(dados['data_nascimento'])
+
+    sexo = driver.find_element(By.NAME, 'sexo')
+    sexo.send_keys(dados['sexo'])
+
+    cpf = driver.find_element(By.NAME, 'cpf')
+    cpf.send_keys(dados['cpf'])
+
+    profissao = driver.find_element(By.NAME, 'profissao')
+    profissao.send_keys(dados['profissao'])
+
+    endereco = driver.find_element(By.NAME, 'endereco')
+    endereco.send_keys(dados['endereco'])
+
+    cep = driver.find_element(By.NAME, 'cep')
+    cep.send_keys(dados['cep'])
+
+    # Submete o formulário (se necessário)
+    # submit_button = driver.find_element(By.NAME, 'submit')
+    # submit_button.click()
+
+finally:
+    # Fecha o WebDriver após um tempo
+    driver.quit()

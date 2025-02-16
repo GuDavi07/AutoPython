@@ -5,18 +5,16 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # Caminho para o WebDriver (exemplo: ChromeDriver)
-webdriver_path = 'path/to/chromedriver'
+webdriver_path = '#Digite o caminho'
 
 # Dados a serem preenchidos
-dados = {
-    'nome': '',
-    'data_nascimento': '',
-    'sexo': '',
-    'cpf': '',
-    'profissao': '',
-    'endereco': '',
-    'cep': ''
-}
+Nome = input(str('Digite o nome: ')
+Data_N = input(str('data_nascimento: ')
+Sexo = input(str('sexo: ')   
+CPF = input(str('cpf: ') 
+Profissao = input(str('profissao: ')     
+Endereco = input(str('endereco: ')    
+CEP = input(str('cep: ')    
 
 # URL do formulário
 form_url = 'http://'
@@ -27,26 +25,26 @@ driver.get(form_url)
 
 try:
     # Preenche os campos do formulário
-    nome = driver.find_element(By.NAME, 'nome')
-    nome.send_keys(dados['nome'])
+    nome = driver.find_element(By.NAME, #XPATHNome)
+    nome.send_keys(dados[Nome])
 
-    data_nascimento = driver.find_element(By.NAME, 'data_nascimento')
-    data_nascimento.send_keys(dados['data_nascimento'])
+    data_nascimento = driver.find_element(By.NAME, #XPATHData_N)
+    data_nascimento.send_keys(dados[Data_N])
 
-    sexo = driver.find_element(By.NAME, 'sexo')
-    sexo.send_keys(dados['sexo'])
+    sexo = driver.find_element(By.NAME, #XPATHSexo)
+    sexo.send_keys(dados[Sexo])
 
-    cpf = driver.find_element(By.NAME, 'cpf')
-    cpf.send_keys(dados['cpf'])
+    cpf = driver.find_element(By.NAME, #XPATHCPF)
+    cpf.send_keys(dados[CPF])
 
-    profissao = driver.find_element(By.NAME, 'profissao')
-    profissao.send_keys(dados['profissao'])
+    profissao = driver.find_element(By.NAME, #XPATHProfissao')
+    profissao.send_keys(dados[Profissao])
 
-    endereco = driver.find_element(By.NAME, 'endereco')
-    endereco.send_keys(dados['endereco'])
+    endereco = driver.find_element(By.NAME, #XPATHEndereco)
+    endereco.send_keys(dados[Endereco])
 
-    cep = driver.find_element(By.NAME, 'cep')
-    cep.send_keys(dados['cep'])
+    cep = driver.find_element(By.NAME, #XPATHCEP)
+    cep.send_keys(dados[CEP])
 
     # Submete o formulário (se necessário)
     # submit_button = driver.find_element(By.NAME, 'submit')
